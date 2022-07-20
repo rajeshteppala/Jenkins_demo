@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="0.221">
+<testcase classname="Manage the TODO list" name="Add new task in TODO list" time="0.042">
+<system-out><![CDATA[Given User is on the TODO application page..................................passed
+When User adds new task.....................................................passed
+Then New task is added to TODO list.........................................passed
+]]></system-out>
+</testcase>
+</testsuite>

@@ -1,5 +1,6 @@
 package stepdefinitions;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -11,6 +12,7 @@ import pagefactory.TODOPage;
 public class TODO {
 
    public WebDriver driver = null;
+
    TODOPage todo;
 
     @Given("I am navigated to  TODO application page")
@@ -35,37 +37,34 @@ public class TODO {
 
     @And("I click on Active option")
     public void clickActiveButton(){
-
+        todo.clickActiveButton();
     }
 
     @Then("Newly added task is displayed under active section")
-    public void verifyTaskInActiveSection(){
-
+    public void verifyTaskInActiveSection() throws InterruptedException {
+        Thread.sleep(2000);
+        todo.verifyTaskIsAdded();
     }
-
 
     @When("I click on Completed option")
-    public void i_click_on_completed_option() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void clickCompletedButton() {
+        todo.clickCompletedButton();
     }
 
-    @Then("Newly added task is not displayed")
-    public void newly_added_task_is_not_displayed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    @Then("Newly added task is not  under completed section")
+    public void verifyTaskNotDisplayedInCompletedSection() {
+
     }
 
     @When("I click on check box")
-    public void i_click_on_check_box() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+    public void clickCheckBox() {
+        todo.clickCheckBox();
     }
 
     @Then("Task is displayed under completed")
     public void task_is_displayed_under_completed() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        todo.clickCompletedButton();
+        todo.verifyTaskIsAdded();
     }
 
     @Then("Task is not displayed under Active")
@@ -104,6 +103,8 @@ public class TODO {
         throw new io.cucumber.java.PendingException();
     }
 
-
-
+    @After
+    public void tearDown(){
+        driver.quit();
+    }
 }

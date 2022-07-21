@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "junit:output/JUNIT/report.xml",
                 "json:output/JSON/report.json"
         },
-        tags = "@add"
+        tags = "@validateActiveSection or @add"
 )
 public class TestRunner {
 }

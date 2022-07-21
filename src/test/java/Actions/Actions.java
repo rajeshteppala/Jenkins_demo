@@ -17,4 +17,14 @@ public class Actions {
     public void verifyIfElementDisplayed(WebElement element){
         element.isDisplayed();
     }
+
+    public void click(WebElement element){
+        element.click();
+    }
+
+    public void verifyIfElementNotDisplayed(WebElement element){
+        if(!element.isDisplayed()){
+
+        };
+    }
 }

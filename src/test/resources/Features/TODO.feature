@@ -16,13 +16,13 @@ Feature: Manage the TODO list
   @ValidateCompletedSection
     Scenario: Check the newly added task is not displayed in completed section
        When I click on Completed option
-       Then Newly added task is not displayed
+       Then Newly added task is not  under completed section
 
   @completeTheTask
     Scenario: Complete the task and validate active & completed section
       When I click on check box
       Then Task is displayed under completed
-      When I click on check box
+      When I click on Active option
       Then Task is not displayed under Active
 
   @clearTheTask

@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         monochrome = true,
         features = ("src/test/resources/Features"),
-        glue = {"StepDefinitions"},
+        glue = {"stepdefinitions"},
         plugin = {"pretty",
                 "html:output/HTML/report.html",
                 "junit:output/JUNIT/report.xml",

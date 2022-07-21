@@ -1,14 +1,13 @@
 package pagefactory;
 
 import Actions.Actions;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 public class TODOPage extends Actions {
-
+    WebDriver driver;
     @FindBy(xpath = "//input[@autofocus=\"autofocus\"]")
     WebElement txt_Todo;
 
@@ -16,6 +15,7 @@ public class TODOPage extends Actions {
     WebElement lbl_task;
 
     public TODOPage(WebDriver driver){
+        this.driver = driver ;
         PageFactory.initElements(driver,this);
     }
 

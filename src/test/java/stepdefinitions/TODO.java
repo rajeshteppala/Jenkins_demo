@@ -34,8 +34,9 @@ public class TODO {
     }
 
     @And("New task is added to TODO list")
-    public void verifyNewTaskAdded() {
+    public void verifyNewTaskAdded() throws InterruptedException {
         todo.verifyTaskIsAdded();
+        Thread.sleep(2000);
     }
 
     @And("I click on Active option")
@@ -57,6 +58,7 @@ public class TODO {
     @Then("Newly added task is not  under completed section")
     public void verifyTaskNotDisplayedInCompletedSection() throws Exception {
        todo.verifyTaskIsNotDisplayed();
+       Thread.sleep(2000);
     }
 
     @When("I click on check box")
@@ -73,6 +75,7 @@ public class TODO {
     @Then("Task is not displayed under Active section")
     public void verifyTaskNotDisplayedInActiveSection() throws Exception {
         todo.verifyTaskIsNotDisplayed();
+        Thread.sleep(2000);
     }
 
     @When("I click on checkbox and clear the task")
@@ -84,6 +87,7 @@ public class TODO {
     @Then("Task is not displayed in the list")
     public void verifyTaskIsNotDisplayed() throws Exception {
         todo.verifyTaskIsNotDisplayed();
+        Thread.sleep(2000);
     }
 
     @When("I add more than one task")
@@ -92,6 +96,7 @@ public class TODO {
         for (String newTask : addTask) {
             todo.enterTaskAndEnter(newTask);
         }
+        Thread.sleep(2000);
     }
 
     @Then("All the task is displayed in the TODO list")

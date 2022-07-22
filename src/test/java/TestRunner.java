@@ -12,7 +12,7 @@ import org.junit.runner.RunWith;
                 "junit:output/JUNIT/report.xml",
                 "json:output/JSON/report.json"
         },
-        tags = "@ValidateCompletedSection"
+        tags = "@add or @validateActiveSection or @ValidateCompletedSection or @completeTheTask or @clearTheTask or @addMultipleTask"
 )
 public class TestRunner {
 }
